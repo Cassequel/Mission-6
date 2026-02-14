@@ -2,8 +2,105 @@
     ViewData["Title"] = "Joel Hilton";
 }
 
-<div id="home-links">
-    <a href="https://www.qwcomedy.com/" target="_blank" class="btn btn-primary">Quick Wits Comedy</a>
-    <a href="https://baconsale.com/" target="_blank" class="btn btn-primary">Baconsale</a>
+<style>
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-family: 'Georgia', serif;
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        color: #1a1a2e;
+    }
+
+    .hero-section .subtitle {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        margin-bottom: 50px;
+    }
+
+    .hero-image:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    }
+
+    .link-cards {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .link-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 40px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        min-width: 220px;
+    }
+
+    .link-card:hover {
+        transform: translateY(-4px);
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .link-card.comedy {
+        background: linear-gradient(135deg, #e63946, #c1121f);
+        box-shadow: 0 8px 30px rgba(230, 57, 70, 0.35);
+    }
+
+    .link-card.comedy:hover {
+        box-shadow: 0 12px 40px rgba(230, 57, 70, 0.5);
+    }
+
+    .link-card.baconsale {
+        background: linear-gradient(135deg, #2b2d42, #14213d);
+        box-shadow: 0 8px 30px rgba(43, 45, 66, 0.35);
+    }
+
+    .link-card.baconsale:hover {
+        box-shadow: 0 12px 40px rgba(43, 45, 66, 0.5);
+    }
+</style>
+
+<div class="hero-section">
+    <h1>JOEL HILTON</h1>
+    <p class="subtitle">Comedy &bull; Podcasts &bull; Entertainment</p>
+
+    <a href="https://baconsale.com/" target="_blank">
+        <img src="~/images/beckinsale.jpg" class="hero-image" />
+    </a>
+
+    <div class="link-cards">
+        <a href="https://www.qwcomedy.com/" target="_blank" class="link-card comedy">
+            🎭 Quick Wits Comedy
+        </a>
+        <a href="https://baconsale.com/" target="_blank" class="link-card baconsale">
+            🎙️ Baconsale
+        </a>
+    </div>
 </div>
-<a href="https://baconsale.com/" target="_blank"><img src="~/images/beckinsale.jpg" /></a>
