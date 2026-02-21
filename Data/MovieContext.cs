@@ -1,12 +1,19 @@
-﻿// Data/MovieContext.cs
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Mission__6.Models;
 
-public class MovieContext : DbContext
+namespace Mission__6.Data
 {
-    public MovieContext(DbContextOptions<MovieContext> options) : base(options) { }
+    public class MovieContext : DbContext
+    {
+        public MovieContext(DbContextOptions<MovieContext> options) : base(options) { }
 
-    public DbSet<Application> Movies { get; set; }
+        public DbSet<Application> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
-    public DbSet<Category> Categories { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Application>().ToTable("Movies");
+            modelBuilder.Entity<Category>().ToTable("Categories");
+        }
+    }
 }
-

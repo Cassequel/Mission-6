@@ -1,0 +1,60 @@
+﻿@model Application
+@{
+    ViewData["Title"] = "Delete Movie";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">🗑️ Delete Movie</h1>
+
+    <div class="card border-danger">
+        <div class="card-header bg-danger text-white">
+            <h5 class="mb-0">Are you sure you want to delete this movie?</h5>
+        </div>
+        <div class="card-body">
+            <table class="table mb-4">
+                <tr>
+                    <th>Title</th>
+                    <td>@Model.Title</td>
+                </tr>
+                <tr>
+                    <th>Category</th>
+                    <td>@Model.Category?.CategoryName</td>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <td>@Model.Year</td>
+                </tr>
+                <tr>
+                    <th>Director</th>
+                    <td>@Model.Director</td>
+                </tr>
+                <tr>
+                    <th>Rating</th>
+                    <td>@Model.Rating</td>
+                </tr>
+                <tr>
+                    <th>Edited</th>
+                    <td>@(Model.Edited ? "Yes" : "No")</td>
+                </tr>
+                <tr>
+                    <th>Lent To</th>
+                    <td>@Model.LentTo</td>
+                </tr>
+                <tr>
+                    <th>Copied to Plex</th>
+                    <td>@(Model.CopiedToPlex ? "Yes" : "No")</td>
+                </tr>
+                <tr>
+                    <th>Notes</th>
+                    <td>@Model.Notes</td>
+                </tr>
+            </table>
+
+            <form method="post" asp-action="DeleteConfirmed">
+                <input type="hidden" name="MovieId" value="@Model.MovieId" />
+                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                <a asp-action="Collection" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
